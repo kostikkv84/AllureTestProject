@@ -10,6 +10,7 @@ public class BaseTest {
     public void setUp(){
         WebDriverManager.chromedriver().setup();
       //  Configuration.baseUrl = "https://the-internet.herokuapp.com/";
+        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         Configuration.browser = "chrome";
         Configuration.driverManagerEnabled = true;
         Configuration.browserSize = "1920x1080";

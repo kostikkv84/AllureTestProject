@@ -12,7 +12,7 @@ public class TestCreate extends BaseTest{
 
     @Test
     @DisplayName("Check report allure")
-    public void checkHref() {
+    public void baseCheckTestProject() {
         int i = 1;
         Assert.assertEquals(1,i);
     }
