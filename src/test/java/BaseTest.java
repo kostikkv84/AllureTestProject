@@ -8,7 +8,7 @@ public class BaseTest {
 
 
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.firefoxdriver().setup();
       //  Configuration.baseUrl = "https://the-internet.herokuapp.com/";
        // System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
         Configuration.browser = "firefox";
