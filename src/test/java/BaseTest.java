@@ -3,6 +3,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import com.codeborne.selenide.Configuration;
 import org.junit.After;
 import org.junit.Before;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BaseTest {
     final static String BASE_USER_NAME = "JohnConnor";
@@ -12,18 +13,35 @@ public class BaseTest {
 
 
     public void setUp(){
-        WebDriverManager.chromedriver().setup();
-       // Configuration.baseUrl = "https://the-internet.herokuapp.com/";
-        System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
+       /* Configuration.remote = "http://localhost:4444/wd/hub";
         Configuration.browser = "chrome";
+        Configuration.browserSize = "1920x1080";
+        Configuration.baseUrl="https://demoqa.com/";
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo",true);
+        Configuration.browserCapabilities = capabilities; */
+
+       WebDriverManager.firefoxdriver().setup();
+       // Configuration.baseUrl = "https://the-internet.herokuapp.com/";
+        Configuration.browser = "firefox";
         Configuration.driverManagerEnabled = true;
+        Configuration.baseUrl="https://demoqa.com";
         Configuration.browserSize = "1600x950";
         Configuration.headless =false;
     }
     @Before
     public void init() {setUp();}
- /*   @After
+
+   @After
     public void tearDown() {
         Selenide.closeWebDriver();
-    }*/
+    }
+    public void delay(Integer timeToDelay){
+        try {
+            Thread.sleep(timeToDelay);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+    }
 }
