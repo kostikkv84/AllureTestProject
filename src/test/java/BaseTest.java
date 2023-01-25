@@ -29,6 +29,7 @@ public class BaseTest {
         Configuration.baseUrl="https://demoqa.com";
         Configuration.browserSize = "1600x950";
         Configuration.headless =false;
+
     }
     @Before
     public void init() {setUp();}
