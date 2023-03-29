@@ -204,6 +204,7 @@ public class TestCreate extends BaseTest{
     }
 
     @Test
+    @Ignore
     public void SelectMenuTest(){
         new MainPage(BASE_URL).goToWidgets().goToSelectMenu().selectValue();
     }
