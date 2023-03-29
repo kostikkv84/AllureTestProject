@@ -11,6 +11,7 @@ public class MainPage {
     private final SelenideElement bookStoreCard = $x("//h5[contains(text(),\"Book Store Application\")]//parent::div");
     private final SelenideElement interaction = $x("//h5[contains(text(),\"Interactions\")]//parent::div");
 
+    private final SelenideElement widgets = $x("//h5[contains(text(),\"Widgets\")]//parent::div");
 
 
     public MainPage (String url){
@@ -29,7 +30,9 @@ public class MainPage {
         interaction.scrollTo().click();
         return this;     }
 
-
+    public WidgetsPage goToWidgets() {
+        widgets.scrollTo().click();
+        return new WidgetsPage();     }
 
 
 }

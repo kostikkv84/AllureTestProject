@@ -8,12 +8,14 @@ import interactions.Droppable;
 import interactions.Resizable;
 import interactions.Sortable;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestCreate extends BaseTest{
     private final static String BASE_URL = "https://demoqa.com/";
@@ -48,6 +50,9 @@ public class TestCreate extends BaseTest{
                 contains("Please verify reCaptcha to register!"));
     }
 
+    /**
+     * Успешное логирование - Test
+     */
     @Test
     public void loginBookStore () {
         MainPage mainPage = new MainPage(BASE_URL);
@@ -129,4 +134,82 @@ public class TestCreate extends BaseTest{
         Assert.assertNotEquals("Что-то пошло не так ) ",style1,style2);
     }
 
+    /**
+     * Accordian - открытие текста 1 по клику на заголовок
+     */
+    @Test
+    public void accordian1ClickTest(){
+        new MainPage(BASE_URL).goToWidgets().
+                goToAccordianPage().cardHeaderClick().getAccordionContentTest("Контент1");
+        sleep(2000);
+    }
+    /**
+     * Accordian - открытие текста 2 по клику на заголовок
+     */
+    @Test
+    public void accordian2ClickTest(){
+        new MainPage(BASE_URL).goToWidgets().
+                goToAccordianPage().cardHeaderClick().getAccordionContentTest("Контент2");
+        sleep(2000);
+    }
+    /**
+     * Accordian - открытие текста 3 по клику на заголовок
+     */
+    @Test
+    public void accordian3ClickTest(){
+        new MainPage(BASE_URL).goToWidgets().
+                goToAccordianPage().cardHeaderClick().getAccordionContentTest("Контент3");
+        sleep(2000);
+    }
+
+    /**
+     * Выбор даты из календаря- Тест
+     */
+    @Test
+    public void selectDateTest () {
+        new MainPage(BASE_URL).goToWidgets().goToDatePicker().selectDate();
+    }
+
+    /**
+     * Доделать проверку ввода даты и времени
+     */
+    @Test
+    @Ignore
+    public void selectDateAndTime () {
+        MainPage mainPage = new MainPage(BASE_URL);
+        mainPage.goToWidgets().goToDatePicker().setSelectDateTwo();
+    }
+
+    /**
+     * Тест прогресс бара
+     */
+    @Test
+    public void progressBarTest() {
+        new MainPage(BASE_URL).goToWidgets().goToProgressBar().start();
+    }
+
+    /**
+     * Всплывающее сообщение при наведении на кнопку, тест
+     */
+    @Test
+    public void ToolTipButtonHoverTest(){
+        new MainPage(BASE_URL).goToWidgets().goToToolTipPage().buttonHover();
+    }
+    /**
+     * Всплывающее сообщение при наведении на инпут, тест
+     */
+    @Test
+    public void ToolTipInputHoverTest(){
+        new MainPage(BASE_URL).goToWidgets().goToToolTipPage().inputHover();
+    }
+
+    @Test
+    public void SelectMenuTest(){
+        new MainPage(BASE_URL).goToWidgets().goToSelectMenu().selectValue();
+    }
+
+
 }
+
+
+
