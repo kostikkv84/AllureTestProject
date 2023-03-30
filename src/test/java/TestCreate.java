@@ -141,7 +141,6 @@ public class TestCreate extends BaseTest{
     public void accordian1ClickTest(){
         new MainPage(BASE_URL).goToWidgets().
                 goToAccordianPage().cardHeaderClick().getAccordionContentTest("Контент1");
-        sleep(2000);
     }
     /**
      * Accordian - открытие текста 2 по клику на заголовок
@@ -150,7 +149,6 @@ public class TestCreate extends BaseTest{
     public void accordian2ClickTest(){
         new MainPage(BASE_URL).goToWidgets().
                 goToAccordianPage().cardHeaderClick().getAccordionContentTest("Контент2");
-        sleep(2000);
     }
     /**
      * Accordian - открытие текста 3 по клику на заголовок
@@ -159,7 +157,6 @@ public class TestCreate extends BaseTest{
     public void accordian3ClickTest(){
         new MainPage(BASE_URL).goToWidgets().
                 goToAccordianPage().cardHeaderClick().getAccordionContentTest("Контент3");
-        sleep(2000);
     }
 
     /**
@@ -204,7 +201,6 @@ public class TestCreate extends BaseTest{
     }
 
     @Test
-    @Ignore
     public void SelectMenuTest(){
         new MainPage(BASE_URL).goToWidgets().goToSelectMenu().selectValue();
     }
